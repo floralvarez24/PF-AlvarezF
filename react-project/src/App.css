@@ -19,6 +19,7 @@
   width: 100%;
   top: 0;
   height: 50px;
+  z-index: 1;
   
   h3{
     font-family: dancing script;
@@ -26,10 +27,11 @@
   }
 }
 
-img{
+.bag{
   width: 40px;
-  margin-left: 20px;
+  cursor: pointer; 
 }
+
 
 body{
   background-color: aliceblue;
@@ -48,11 +50,11 @@ body{
   font-family:dancing script;
   background-image:url("../src/assets/fondo-verano-bolsa.jpg");
   background-size: 100vw;
+  background-repeat: no-repeat;
   font-size: 35px;
-
 }
 
-button{
+.categories{
   background:#f08080;
   color:#fff;
   border: none;
@@ -64,11 +66,11 @@ button{
   transition:800ms ease all;
   outline:none;
 }
-button:hover{
+.categories:hover{
   background:#fff;
   color:#f08080;
 }
-button:before,button:after{
+.categories:before,.categories:after{
   content:'';
   position:absolute;
   top:0;
@@ -78,13 +80,13 @@ button:before,button:after{
   background: black;
   transition:400ms ease all;
 }
-button:after{
+.categories:after{
   right:inherit;
   top:inherit;
   left:0;
   bottom:0;
 }
-button:hover:before,button:hover:after{
+.categories:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
 }
