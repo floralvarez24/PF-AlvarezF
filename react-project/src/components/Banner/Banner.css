@@ -1,0 +1,23 @@
+.banner{
+    margin-top: 50px;
+    font-family: dancing script;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.texto{
+    position: absolute;
+    color: black;
+    text-align: center;
+}
+
+.texto h2{
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+.banner img{
+    width:100%
+}
+

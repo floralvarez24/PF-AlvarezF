@@ -2,13 +2,13 @@ import './Item.css'
 
 const Item = ({id, name, img, description, price, stock}) => {
     return (
-        <article className='ItemCard'>
+        <div className='ItemCard'>
             <header className='Header'>
                 <h2 className='ItemHeader'>
                     {name}
                 </h2>
             </header>
-            <picture>
+            <picture className='foto'>
                 <img src={img} alt={name} />
             </picture>
             <section>
@@ -22,7 +22,7 @@ const Item = ({id, name, img, description, price, stock}) => {
             <footer className='ItemFooter'>
                  <button className='Option'> Ver detalle</button>
             </footer>
-        </article>
+        </div>
     )
 }
 export default Item;

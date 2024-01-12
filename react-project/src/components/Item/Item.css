@@ -1,0 +1,21 @@
+img{
+    width: 400px;
+}
+.ItemCard{
+    font-family: jost;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    
+}
+p{
+    font-size: 18px;
+}
+h2{
+    font-size: 22px;
+}
+button{
+    border-radius: 5px;
+    background-color:#f08080;
+    padding: 8px;
+}
