@@ -3,17 +3,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
-.Nav{
+.NavBar{
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  align-content: stretch;
   background-color: #f08080;
   color: white;
   padding: 40px;
   font-family:jost;
-  text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
@@ -40,6 +44,10 @@ body{
 
 
 .categories{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   background:#f08080;
   color:#fff;
   border: none;
@@ -50,12 +58,15 @@ body{
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
+  cursor: pointer;
 }
+
+
 .categories:hover{
   background:#fff;
   color:#f08080;
 }
-.categories:before,.categories:after{
+.categories:before, .categories:after{
   content:'';
   position:absolute;
   top:0;
@@ -71,7 +82,7 @@ body{
   left:0;
   bottom:0;
 }
-.categories:hover:before,button:hover:after{
+.categories:hover:before,.categories:hover:after{
   width:100%;
   transition:800ms ease all;
 }

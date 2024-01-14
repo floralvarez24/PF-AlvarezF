@@ -1,5 +1,5 @@
 import './Banner.css'
-const Carrusel = () => {
+const Banner = () => {
     return ( 
         <div className='banner'> 
                 <img src="src/assets/fondo-verano-bolsa.jpg" alt="" />

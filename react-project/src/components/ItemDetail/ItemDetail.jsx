@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import './Item.css'
+import ItemCount from "../ItemCount/ItemCount"; 
+import './ItemDetail.css'
 
-const Item = ({id, name, img, description, price, stock}) => {
+const ItemDetail = ({id, name, img, category, description, price, stock}) => {
     return (
         <div className='ItemCard'>
             <header className='Header'>
@@ -14,16 +14,19 @@ const Item = ({id, name, img, description, price, stock}) => {
             </picture>
             <section>
                 <p className='Info'>
+                    Categoria: {category}
+                </p>
+                <p className='Info'>
                     Precio: ${price} 
                 </p>
                 <p className='Info'>
-                    Stock disponible: {stock}
+                  Descripcion: {description}
                 </p>
             </section>
-              <footer className='ItemFooter'>
-                 <div className='det'><Link to={`/item/${id}`}> Ver detalle</Link> </div>
-              </footer>
+            <footer className='ItemFooter'>
+                <ItemCount stock={stock} initial={1} onAdd={(quantity) => console.log('Cantidad agregada ', quantity)}/>
+            </footer>
         </div>
     )
 }
-export default Item;
+export default ItemDetail;
