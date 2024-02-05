@@ -1,19 +1,25 @@
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import { useCart } from '../../context/CartContext'
-import { useNotification } from '../../notification/NotificationService'
 import './ItemDetail.css'
+import Swal from 'sweetalert2';
 
 const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
     const { addItem, getProductQuantity } = useCart()
-    const { showNotification } = useNotification()
 
     const handleOnAdd = (quantity) => {
         const objProductToAdd = {
             id, name, price, quantity
         }
         addItem(objProductToAdd)
-        showNotification('info', `Se agregaron correctamente ${quantity} ${name}`)
+         
+        // Muestra una notificación con SweetAlert2
+         Swal.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito',
+            showConfirmButton: false,
+            timer: 1500,
+        });
     }
 
     const productQuantity = getProductQuantity(id)
