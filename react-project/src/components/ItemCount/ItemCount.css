@@ -20,7 +20,7 @@
     cursor: pointer;
 }
 
-.ButtonMas{
+.ButtonMas, .Option2{
     border-radius: 5px;
     background-color:#f08080;
     padding: 8px;

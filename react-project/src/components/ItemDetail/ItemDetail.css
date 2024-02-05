@@ -2,7 +2,7 @@ img{
     width: 300px;
 }
 .ItemCard{
-    margin-top: 30px;
+    margin-top: 20px;
     font-family: jost;
     padding: 15px;
     border-radius: 8px;
@@ -16,8 +16,12 @@ p{
 h2{
     font-size: 22px;
 }
-button{
+.Option2{
     border-radius: 5px;
     background-color:#f08080;
     padding: 8px;
 }
+.Info{
+    margin-bottom: 10px;
+}
+
