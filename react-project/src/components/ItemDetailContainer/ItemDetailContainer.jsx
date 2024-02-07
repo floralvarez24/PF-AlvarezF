@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
     if(loading) {
             return <span className="loader"></span>
         }
-
+        
     return (
         <div className='ItemDetailContainer'>
             <ItemDetail {...product} />

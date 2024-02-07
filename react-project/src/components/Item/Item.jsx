@@ -17,11 +17,11 @@ const Item = ({id, name, img, description, price, stock}) => {
                     Precio: ${price} 
                 </p>
                 <p className='Info'>
-                    Stock disponible: {stock}
+                    Stock disponible: {stock === 0 ? "Sin stock" : stock}
                 </p>
             </section>
               <footer className='ItemFooter'>
-                 <div className='det'><Link to={`/item/${id}`}> Ver detalle</Link> </div>
+                 <div className='det'><Link to={stock > 0 ? `/item/${id}` : '#'}> {stock > 0 ? 'Ver detalle' : 'Sin stock'} </Link> </div>
               </footer>
         </div>
     )
