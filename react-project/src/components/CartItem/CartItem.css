@@ -1,0 +1,19 @@
+.cartItem{
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   border: 1px solid #000;
+   border-radius: 10px;
+   background-color: #f5f5f5;
+   padding: 10px 10px 10px 10px;
+   margin-bottom: 20px;
+}
+.remover{
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
+    background-color: #f08080;
+    border-radius: 5px;
+}

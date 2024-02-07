@@ -1,25 +1,19 @@
 import {useState, useEffect} from 'react';
-//import { getProducts } from '../../asyncMock';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-//import { getProductsByCategory } from '../../asyncMock'; 
 import {db} from '../../services/firebase/firebaseConfig'
 import {getDocs,collection,query,where} from 'firebase/firestore'
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
- const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([])
 
  const { categoryId } = useParams()
     
 useEffect(() => {
-  //const asyncFunc = categoryId ? getProductsByCategory : getProducts;
+  setLoading(true)
 
-  //asyncFunc(categoryId)
-    //.then((res) => {
-      //setProducts(res);
-    //})
-    //.catch((error) => {
-    //});
     const productsCollection = categoryId
       ? query(collection(db, 'products'), where('category', '==', categoryId))
       :collection(db, 'products')
@@ -36,10 +30,15 @@ useEffect(() => {
   .catch((error) => {
     console.log('Error searching items', error)
   })
-
+ .finally(() => {
+                setLoading(false)
+            })
 
 }, [categoryId]);
     
+    if(loading) {
+    return <span className="loader"></span>
+    }
           return (
         <div className="contenedor">
          <ItemList products={products} />

@@ -1,39 +1,42 @@
 import { Link } from "react-router-dom"
 import { useCart } from "../../context/CartContext"
 import CartItem from "../CartItem/CartItem"
+import './CartView.css'
 
 const CartView = () => {
 
-    const { cart,total, clearCart } = useCart()
+    const { total, clearCart } = useCart()
 
     if (total === 0) {
         return (
-            <div>
+            <div className="emptyCart">
             <h1>El carrito está vacío</h1>
-            <Link to='/'>Volver al inicio</Link>
+            <Link to='/' className="cartButton">Volver al inicio</Link>
             </div>
         )
     }
     
     return (
         <>
-            <h1>CART</h1>
+            <div className="Cart">
+            <h1> Mi carrito</h1>
             <section>
-                {cart.map((prod) => {
-                    return (
-                        <CartItem key={prod.id} id={prod.id} name={prod.name} price={prod.price} quantity={prod.quantity} />
-                    )
-                })}
-
+            <CartItem />
             </section>
-            <section>
-                <h1>Total: ${total}</h1>
+            <section className="total">
+                <h2>Total: ${total}</h2>
             </section>
-            <section>
-                <button onClick={clearCart}>Vaciar Carrito</button>
-                <Link to='/checkout'>Checkout</Link>
+            <section className="cartFooter">
+                <div>
+                <button className="cartButton" onClick={clearCart}>Vaciar Carrito</button>
+                </div>
+                <div className="cartButton">
+                <Link to='/checkout'>Terminar compra</Link>
+                </div>
             </section>
+            </div>
         </>
+
     )
 }
 

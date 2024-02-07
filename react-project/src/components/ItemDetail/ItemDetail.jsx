@@ -13,7 +13,6 @@ const ItemDetail = ({ id, name, category, img, price, stock, description }) => {
         }
         addItem(objProductToAdd)
          
-        // Muestra una notificación con SweetAlert2
          Swal.fire({
             icon: 'success',
             title: 'Producto agregado al carrito',

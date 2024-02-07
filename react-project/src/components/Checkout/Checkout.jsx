@@ -4,6 +4,8 @@ import { useCart } from "../../context/CartContext"
 import OrderForm from '../OrderForm/OrderForm'
 import { db } from "../../services/firebase/firebaseConfig"
 import Swal from 'sweetalert2';
+import { Link } from "react-router-dom"
+import './Checkout.css'
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
@@ -31,7 +33,6 @@ const Checkout = () => {
             const ids = cart.map(prod => prod.id)
             const productsCollection = query(collection(db, 'products'), where(documentId(), 'in', ids))
     
-            // getDocs(productsCollection).then(querySnapshot => {})
             const querySnapshot = await getDocs(productsCollection)
             const { docs } = querySnapshot
             
@@ -82,18 +83,25 @@ const Checkout = () => {
     }
 
     if(loading) {
-        return <h1>Se esta generando su orden, aguarde por favor...</h1>
+        return (
+            <div className="alert">
+            <h1>Se esta generando su orden, aguarde por favor...</h1>
+            <span className="loader"></span>
+            </div>
+        )
     }
 
     if(orderId) {
-        <div>
-        return <h1>El id de su compra es: {orderId}</h1>
-        </div>
+        return (
+            <div className="alert">
+            <h1>El id de su compra es: {orderId}</h1>
+            <Link to='/' className="cartButton">Volver al inicio</Link>
+            </div>
+        )
     }
 
     return (
         <>
-            <h1>CHECKOUT</h1>
             <OrderForm onConfirm={createOrder}/>
         </>
     )
