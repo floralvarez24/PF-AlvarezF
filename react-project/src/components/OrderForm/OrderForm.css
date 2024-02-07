@@ -1,20 +1,17 @@
 .Container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #f2f2f2;
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;
     width: 420px;
-    margin-top: 20px;
+    margin-top: 700px;
     box-shadow: 7px 13px 37px rgba(0, 0, 0, .8);
     margin-bottom: 50px;
-    font-family: jost;
-    margin-left: 400px;
-   
+    font-family: jost;  
 }
 .Form{
     padding: .8rem;

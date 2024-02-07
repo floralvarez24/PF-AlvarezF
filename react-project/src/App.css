@@ -7,33 +7,7 @@
   list-style: none;
 }
 
-.NavBar{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  align-content: stretch;
-  background-color: #f08080;
-  color: white;
-  padding: 40px;
-  font-family:jost;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  height: 50px;
-  z-index: 1;
-  
-  h3{
-    font-family: dancing script;
-    font-size: 30px;
-  }
-}
 
-.bag{
-  width: 40px;
-  cursor: pointer; 
-}
 
 
 body{
@@ -43,46 +17,5 @@ body{
 
 
 
-.categories{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background:#f08080;
-  color:#fff;
-  border: none;
-  position:relative;
-  height:50px;
-  font-size:16px;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  cursor: pointer;
-}
 
 
-.categories:hover{
-  background:#fff;
-  color:#f08080;
-}
-.categories:before, .categories:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: black;
-  transition:400ms ease all;
-}
-.categories:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-}
-.categories:hover:before,.categories:hover:after{
-  width:100%;
-  transition:800ms ease all;
-}
